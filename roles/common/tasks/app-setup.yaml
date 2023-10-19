@@ -31,13 +31,14 @@
 
 - name: download artifact from Nexus
   ansible.builtin.get_url:
-    url: "{{nexus_url}}/{{component}}/{{group_id}}/{{component}}/{{app_version}}/{{component}}-{{app_version}}.zip"
-    dest: "/app/{{component}}-{{app_version}}.zip"
+    # url: "{{nexus_url}}/{{component}}/{{group_id}}/{{component}}/{{app_version}}/{{component}}-{{app_version}}.zip"
+    url: http://54.91.84.146:8081//repository/catalogue/com/roboshop/catalogue/1.0.1/catalogue-1.0.0.zip
+    dest: "/app/catalogue-1.0.0.zip"
     username: "{{nexus_username}}"
     password: "{{nexus_password}}"
 
 - name: extract {{component}} artifact
   ansible.builtin.unarchive:
-    src: "/app/{{component}}-{{app_version}}.zip"
+    src: "/app/catalogue-1.0.0.zip"
     dest: "/app"
     remote_src: yes
