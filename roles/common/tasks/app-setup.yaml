@@ -32,7 +32,7 @@
 - name: download artifact from Nexus
   ansible.builtin.get_url:
     # url: "{{nexus_url}}/{{component}}/{{group_id}}/{{component}}/{{app_version}}/{{component}}-{{app_version}}.zip"
-    url: http://34.203.210.220/:8081/repository/catalogue/com/roboshop/catalogue/1.0.0/catalogue-1.0.0.zip
+    url: http://34.203.210.220:8081/repository/catalogue/com/roboshop/catalogue/1.0.0/catalogue-1.0.0.zip
     dest: "/app/catalogue-1.0.0.zip"
     username: "{{nexus_username}}"
     password: "{{nexus_password}}"
